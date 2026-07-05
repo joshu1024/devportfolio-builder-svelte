@@ -10,4 +10,23 @@
 	<h1 class="text-4xl font-bold">{portfolio.hero.name}</h1>
 	<p class="mt-2 text-blue-400 text-lg">{portfolio.hero.title}</p>
 	<p class="mt-6 text-zinc-400 leading-7">{portfolio.hero.bio}</p>
+	<section class="mt-10">
+	<h2 class="mb-3 text-2xl font-semibold">
+		About
+	</h2>
+
+	<p class="leading-7 text-zinc-400">
+		{portfolio.about.description}
+	</p>
+
+	<p class="mt-4 text-sm text-zinc-500">
+		📍 {portfolio.about.location}
+	</p>
+
+	{#if portfolio.about.available}
+		<p class="mt-2 text-green-400 font-medium">
+			<span class="animate-pulse ">🟢</span> Available for work
+		</p>
+	{/if}
+</section>
 </div>

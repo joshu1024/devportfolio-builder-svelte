@@ -10,7 +10,13 @@
             title:"Fullstack Engineer",
             bio:"Building scalable typescript applications"
     
-        }    
+        },
+
+        about:{
+            description:"I'm a passionate full-stack engineer focused on building scalable applications.",
+            location: "Nairobi, Kenya",
+            available: true
+        } 
     })
 
 </script>
@@ -20,9 +26,9 @@
         <Sidebar/>
         <main class="grid flex-1 grid-cols-2 gap-6 overflow-auto p-6">
 
-        <EditorPanel {portfolio}/>
+       <div class="overflow-y-auto pr-2"> <EditorPanel {portfolio}/></div>
 
-        <PreviewPanel {portfolio}/>
+        <div class="overflow-y-auto pr-2"><PreviewPanel {portfolio}/></div>
 
         </main>
     </div>
