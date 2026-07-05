@@ -1,42 +1,77 @@
-# sv
+# 🚀 DevPortfolio Builder
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern portfolio builder built with **Svelte 5**, **TypeScript**, and **Tailwind CSS**.
 
-## Creating a project
+Users can visually create a professional developer portfolio with a live preview, then export it as a polished personal website.
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## ✨ Features
 
-To recreate this project with the same configuration:
+- Live portfolio preview
+- Hero section editor
+- About section editor (Coming Soon)
+- Projects management (Coming Soon)
+- Skills management (Coming Soon)
+- Theme customization (Coming Soon)
+- Responsive design
+- Built with Svelte 5 Runes
 
-```sh
-# recreate this project
-npx sv@0.16.1 create --template minimal --types ts --add eslint tailwindcss="plugins:none" prettier playwright vitest="usages:unit,component" --install npm devportfolio-builder
-```
+---
 
-## Developing
+## 🛠 Tech Stack
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- Svelte 5
+- SvelteKit
+- TypeScript
+- Tailwind CSS
+- Lucide Svelte
 
-```sh
+---
+
+## 📚 Learning Journey
+
+This project is being built incrementally while learning Svelte 5.
+
+### Completed
+
+- [x] Project setup
+- [x] Application shell
+- [x] Sidebar navigation
+- [x] Header
+- [x] Reusable UI components
+- [x] Hero editor
+- [x] Live preview
+- [x] Reactive state with `$state`
+
+### Upcoming
+
+- [ ] About section
+- [ ] Projects section
+- [ ] Skills section
+- [ ] Experience section
+- [ ] Education section
+- [ ] Contact section
+- [ ] Theme customization
+- [ ] Export portfolio
+
+---
+
+## 📸 Preview
+
+Coming soon...
+
+---
+
+## 🚀 Getting Started
+
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Open:
 
-To create a production version of your app:
-
-```sh
-npm run build
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+http://localhost:5173
+```
