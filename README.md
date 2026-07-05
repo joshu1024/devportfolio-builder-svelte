@@ -46,7 +46,7 @@ This project is being built incrementally while learning Svelte 5.
 
 ### Upcoming
 
-- [ ] About section
+- [x] About section
 - [ ] Projects section
 - [ ] Skills section
 - [ ] Experience section
