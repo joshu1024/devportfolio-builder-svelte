@@ -4,3 +4,6 @@
     bio:string;
    }
 
+export interface Portfolio {
+	hero: Hero;
+}
