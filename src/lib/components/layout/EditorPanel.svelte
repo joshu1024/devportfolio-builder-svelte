@@ -1,4 +1,21 @@
-<div class="flex h-full flex-col rounded-xl border border-zinc-800 bg-zinc-900">
-    <div class="border-b border-zinc-800 px-5 py-4"><h2 class="text-lg font-semibold text-white">Editor</h2></div>
-    <div class="flex-1 p-5"><p class="text-sm text-zinc-500">Editor content will go here</p></div>
-</div>
+<script lang="ts">
+	import SectionCard from "$lib/components/ui/SectionCard.svelte";
+    import Input from "$lib/components/ui/Input.svelte";
+    import Textarea from "../ui/Textarea.svelte";
+    import type { Hero } from "$lib/types/portfolio";
+  
+   interface Props {
+    hero:Hero
+   }
+   let {hero}:Props = $props()
+</script>
+
+<SectionCard title="Hero Section">
+	<div class="space-y-5">
+        <Input label="Name" bind:value={hero.name} placeholder="Your name"/>
+        <Input label="Professional Title"
+			bind:value={hero.title}
+			placeholder="Your title"/>
+        <Textarea label="Bio" bind:value={hero.bio} placeholder="Tell visitors about yourself"/>    
+    </div>
+</SectionCard>

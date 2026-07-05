@@ -1,13 +1,13 @@
-<div class="flex h-full flex-col rounded-xl border border-zinc-800 bg-zinc-900">
-	<div class="border-b border-zinc-800 px-5 py-4">
-		<h2 class="text-lg font-semibold text-white">
-			Live Preview
-		</h2>
-	</div>
+<script lang="ts">
+	import type { Hero } from "$lib/types/portfolio";
+	interface Props {
+		hero:Hero
+	}
+	let {hero}:Props = $props();
+</script>
 
-	<div class="flex items-center justify-center flex-1">
-		<p class="text-sm text-zinc-500">
-			Preview will appear here.
-		</p>
-	</div>
+<div class="p-8 border rounded-2xl border-zinc-800 bg-zinc-950">
+	<h1 class="text-4xl font-bold">{hero.name}</h1>
+	<p class="mt-2 text-blue-400 text-lg">{hero.title}</p>
+	<p class="mt-6 text-zinc-400 leading-7">{hero.bio}</p>
 </div>
