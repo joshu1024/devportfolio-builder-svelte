@@ -10,9 +10,10 @@ Users can visually create a professional developer portfolio with a live preview
 
 - Live portfolio preview
 - Hero section editor
-- About section editor (Coming Soon)
+- About section editor 
   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/33228a37-9b78-408e-8576-5add9bdf4a08" />
-- Projects management (Coming Soon)
+- Projects management
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0e0f9e80-c5be-4cab-a2e3-533cfc5c4038" />
 - Skills management (Coming Soon)
 - Theme customization (Coming Soon)
 - Responsive design
