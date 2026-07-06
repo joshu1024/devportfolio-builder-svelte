@@ -29,4 +29,13 @@
 		</p>
 	{/if}
 </section>
+<section class="mt-10">
+	<h2 class="text-2xl font-semibold">Projects</h2>
+	{#each portfolio.projects as project(project.id)}
+	<div class="mt-6 border  rounded-xl border-zinc-800 p-4">
+		<h3 class="text-xl font-semibold">{project.title}</h3>
+		<p class="mt-2 text-zinc-400">{project.description}</p>
+	</div>
+	{/each}
+</section>
 </div>

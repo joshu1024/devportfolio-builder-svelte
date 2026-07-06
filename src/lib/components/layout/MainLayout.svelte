@@ -11,12 +11,27 @@
             bio:"Building scalable typescript applications"
     
         },
-
         about:{
             description:"I'm a passionate full-stack engineer focused on building scalable applications.",
             location: "Nairobi, Kenya",
             available: true
-        } 
+        } ,
+        projects: [
+	{
+		id: 1,
+		title: "Analytics Dashboard",
+		description: "MERN analytics dashboard with Redux Toolkit shown Recharts data visualizations.",
+		github: "https://github.com/...",
+		liveDemo: "https://dashboard..."
+	},
+	{
+		id: 2,
+		title: "E-Commerce Platform",
+		description: "Production-ready MERN e-commerce platform with JWT authentication, PayPal payments, admin product management, and scalable Redux Toolkit state architecture.",
+		github: "https://github.com/...",
+		liveDemo: "https://ecommerce..."
+	}
+]
     })
 
 </script>

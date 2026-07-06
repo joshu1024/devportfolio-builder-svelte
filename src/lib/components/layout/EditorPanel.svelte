@@ -4,10 +4,25 @@
     import Textarea from "../ui/Textarea.svelte";
     import type{ Portfolio } from "$lib/types/portfolio";
     import Checkbox from "../ui/Checkbox.svelte";
+	import ProjectCard from "../editor/ProjectCard.svelte";
+
+
    interface Props {
     portfolio:Portfolio
    }
    let {portfolio}:Props = $props()
+   	function addProject(){
+		portfolio.projects.push({
+			id: Date.now(),
+			title: "",
+			description: "",
+			github: "",
+			liveDemo: ""
+		})
+	}
+	function deleteProject(id:number){
+		portfolio.projects = portfolio.projects.filter((project)=>project.id !== id)
+	}
 </script>
 
 <div class="space-y-6"><SectionCard title="Hero Section">
@@ -19,6 +34,7 @@
         <Textarea label="Bio" bind:value={portfolio.hero.bio} placeholder="Tell visitors about yourself"/>    
           </div>
 </SectionCard>
+
 <SectionCard title="About Section">
 	<div class="space-y-5">
 		<Input
@@ -38,4 +54,21 @@
 			bind:checked={portfolio.about.available}
 		/>
 	</div>
-</SectionCard></div>
+</SectionCard>
+
+<div class="mb-4 flex justify-between items-center">
+	<h2 class="text-xl font-semibold">Projects</h2>
+
+	<button
+		onclick={addProject}
+		class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
+	>
+		+ Add Project
+	</button>
+</div>
+
+{#each portfolio.projects as project, index(project.id)}
+	<ProjectCard {project} {index} onDelete={()=>deleteProject(project.id)}/>
+{/each}
+</div>
+
