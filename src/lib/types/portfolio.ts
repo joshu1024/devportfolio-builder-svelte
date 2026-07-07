@@ -14,9 +14,11 @@ export interface Project {
 	description: string;
 	github: string;
 	liveDemo: string;
-}   
+}  
+
 export interface Portfolio {
 	hero: Hero;
    about:About;
-   projects:Project[]
+   projects:Project[];
+   skills:string[];
 }

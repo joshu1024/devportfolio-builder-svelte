@@ -31,7 +31,15 @@
 		github: "https://github.com/...",
 		liveDemo: "https://ecommerce..."
 	}
-]
+        ],
+        skills: [
+        "TypeScript",
+        "Svelte",
+        "Tailwind CSS",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma"
+         ]
     })
 
 </script>

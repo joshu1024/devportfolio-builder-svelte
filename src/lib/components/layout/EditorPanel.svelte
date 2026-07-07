@@ -5,6 +5,7 @@
     import type{ Portfolio } from "$lib/types/portfolio";
     import Checkbox from "../ui/Checkbox.svelte";
 	import ProjectCard from "../editor/ProjectCard.svelte";
+	import SkillsEditor from "../editor/SkillsEditor.svelte";
 
 
    interface Props {
@@ -70,5 +71,7 @@
 {#each portfolio.projects as project, index(project.id)}
 	<ProjectCard {project} {index} onDelete={()=>deleteProject(project.id)}/>
 {/each}
+<SkillsEditor {portfolio}/>
 </div>
+
 

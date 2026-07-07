@@ -4,6 +4,7 @@
 		portfolio:Portfolio
 	}
 	let {portfolio}:Props = $props();
+	const skillCount = $derived(portfolio.skills.length)
 </script>
 
 <div class="p-8 border rounded-2xl border-zinc-800 bg-zinc-950">
@@ -28,14 +29,30 @@
 			<span class="animate-pulse ">🟢</span> Available for work
 		</p>
 	{/if}
-</section>
-<section class="mt-10">
-	<h2 class="text-2xl font-semibold">Projects</h2>
-	{#each portfolio.projects as project(project.id)}
-	<div class="mt-6 border  rounded-xl border-zinc-800 p-4">
-		<h3 class="text-xl font-semibold">{project.title}</h3>
-		<p class="mt-2 text-zinc-400">{project.description}</p>
-	</div>
-	{/each}
-</section>
+	</section>
+	<section class="mt-10">
+		<h2 class="text-2xl font-semibold">Projects</h2>
+		{#each portfolio.projects as project(project.id)}
+		<div class="mt-6 border  rounded-xl border-zinc-800 p-4">
+			<h3 class="text-xl font-semibold">{project.title}</h3>
+			<p class="mt-2 text-zinc-400">{project.description}</p>
+		</div>
+		{/each}
+	</section>
+	<section class="mt-10">
+	<div class="flex items-center justify-between">
+	<h2 class="text-xl font-semibold">Skills</h2>
+
+	<p class="text-sm text-zinc-400">
+		{skillCount} skills
+	</p>
+</div>
+		<div class="flex flex-wrap gap-3">
+			{#each portfolio.skills as skill (skill)}
+		<span class="bg-blue-600 px-3 py-1 rounded text-sm font-medium">
+			{skill}
+		</span>
+		{/each}
+		</div>
+	</section>
 </div>
