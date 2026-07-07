@@ -15,7 +15,7 @@ Users can visually create a professional developer portfolio with a live preview
 - Projects management
   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0e0f9e80-c5be-4cab-a2e3-533cfc5c4038" />
 - Skills management
-  ![Uploading image.png…]()
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d3b423aa-483b-4dcb-9ecc-4ec90cac4591" />
 - Theme customization (Coming Soon)
 - Responsive design
 - Built with Svelte 5 Runes
