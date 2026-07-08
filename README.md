@@ -11,11 +11,8 @@ Users can visually create a professional developer portfolio with a live preview
 - Live portfolio preview
 - Hero section editor
 - About section editor 
-  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/33228a37-9b78-408e-8576-5add9bdf4a08" />
 - Projects management
-  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0e0f9e80-c5be-4cab-a2e3-533cfc5c4038" />
 - Skills management
-  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d3b423aa-483b-4dcb-9ecc-4ec90cac4591" />
 - Theme customization (Coming Soon)
 - Responsive design
 - Built with Svelte 5 Runes
@@ -50,9 +47,13 @@ This project is being built incrementally while learning Svelte 5.
 ### Upcoming
 
 - [x] About section
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/33228a37-9b78-408e-8576-5add9bdf4a08" />
 - [x] Projects section
+ <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0e0f9e80-c5be-4cab-a2e3-533cfc5c4038" />
 - [x] Skills section
-- [ ] Experience section
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d3b423aa-483b-4dcb-9ecc-4ec90cac4591" />
+- [x] Experience section
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2e15caa9-df7c-4bc5-93ed-5180b4df29d8" />
 - [ ] Education section
 - [ ] Contact section
 - [ ] Theme customization
