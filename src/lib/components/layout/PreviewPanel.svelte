@@ -36,6 +36,8 @@
 		<div class="mt-6 border  rounded-xl border-zinc-800 p-4">
 			<h3 class="text-xl font-semibold">{project.title}</h3>
 			<p class="mt-2 text-zinc-400">{project.description}</p>
+			<p class="mt-2 text-zinc-400 ">{project.github}</p>
+			<p class="mt-2 text-zinc-400">{project.liveDemo}</p>
 		</div>
 		{/each}
 	</section>
@@ -46,7 +48,7 @@
 	<p class="text-sm text-zinc-400">
 		{skillCount} skills
 	</p>
-</div>
+    </div>
 		<div class="flex flex-wrap gap-3">
 			{#each portfolio.skills as skill (skill)}
 		<span class="bg-blue-600 px-3 py-1 rounded text-sm font-medium">
@@ -54,5 +56,15 @@
 		</span>
 		{/each}
 		</div>
+	</section>
+	<section class="mt-10">
+		<h3 class="text-2xl font-semibold">Experience</h3>
+		{#each portfolio.experience as experience (experience.id)}
+		{@const exp = experience}
+		<h3 class="text-xl font-semibold">{exp.company}</h3>
+		<p class="mt-2 text-zinc-400">{exp.role}</p>
+		<p class="mt-2 text-zinc-400">{exp.duration}</p>
+		<p class="mt-2 text-zinc-400">{exp.description}</p>
+		{/each}
 	</section>
 </div>

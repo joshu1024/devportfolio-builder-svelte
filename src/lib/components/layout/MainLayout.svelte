@@ -17,20 +17,20 @@
             available: true
         } ,
         projects: [
-	{
-		id: 1,
-		title: "Analytics Dashboard",
-		description: "MERN analytics dashboard with Redux Toolkit shown Recharts data visualizations.",
-		github: "https://github.com/...",
-		liveDemo: "https://dashboard..."
-	},
-	{
-		id: 2,
-		title: "E-Commerce Platform",
-		description: "Production-ready MERN e-commerce platform with JWT authentication, PayPal payments, admin product management, and scalable Redux Toolkit state architecture.",
-		github: "https://github.com/...",
-		liveDemo: "https://ecommerce..."
-	}
+        {
+            id: 1,
+            title: "Analytics Dashboard",
+            description: "MERN analytics dashboard with Redux Toolkit shown Recharts data visualizations.",
+            github: "https://github.com/...",
+            liveDemo: "https://dashboard..."
+        },
+        {
+            id: 2,
+            title: "E-Commerce Platform",
+            description: "Production-ready MERN e-commerce platform with JWT authentication, PayPal payments, admin product management, and scalable Redux Toolkit state architecture.",
+            github: "https://github.com/...",
+            liveDemo: "https://ecommerce..."
+        }
         ],
         skills: [
         "TypeScript",
@@ -39,6 +39,15 @@
         "Node.js",
         "PostgreSQL",
         "Prisma"
+         ],
+        experience: [
+            {
+                id: 1,
+                company: "OpenAI",
+                role: "Full-Stack Engineer",
+                duration: "2025 - Present",
+                description: "Building scalable AI applications."
+            }
          ]
     })
 

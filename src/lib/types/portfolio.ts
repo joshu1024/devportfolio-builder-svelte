@@ -15,10 +15,17 @@ export interface Project {
 	github: string;
 	liveDemo: string;
 }  
-
+export interface Experience {
+	id: number;
+	company: string;
+	role: string;
+	duration: string;
+	description: string;
+}
 export interface Portfolio {
 	hero: Hero;
    about:About;
    projects:Project[];
    skills:string[];
+   experience:Experience[]
 }

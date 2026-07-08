@@ -6,12 +6,14 @@
     import Checkbox from "../ui/Checkbox.svelte";
 	import ProjectCard from "../editor/ProjectCard.svelte";
 	import SkillsEditor from "../editor/SkillsEditor.svelte";
+	import ExperienceCard from "../editor/ExperienceCard.svelte";
 
 
    interface Props {
     portfolio:Portfolio
    }
    let {portfolio}:Props = $props()
+   
    	function addProject(){
 		portfolio.projects.push({
 			id: Date.now(),
@@ -24,9 +26,22 @@
 	function deleteProject(id:number){
 		portfolio.projects = portfolio.projects.filter((project)=>project.id !== id)
 	}
+	function addExperince(){
+		portfolio.experience.push({
+			id:Date.now(),
+			company:"",
+			role:'',
+			duration:"",
+			description:""
+		})
+	}
+	function deleteExperince(id:number){
+		portfolio.experience = portfolio.experience.filter((e)=>e.id !== id)
+	}
 </script>
 
-<div class="space-y-6"><SectionCard title="Hero Section">
+<div class="space-y-6">
+<SectionCard title="Hero Section">
 	<div class="space-y-5">
         <Input label="Name" bind:value={portfolio.hero.name} placeholder="Your name"/>
         <Input label="Professional Title"
@@ -72,6 +87,19 @@
 	<ProjectCard {project} {index} onDelete={()=>deleteProject(project.id)}/>
 {/each}
 <SkillsEditor {portfolio}/>
+<div class="mb-4 flex justify-between items-center">
+	<h2 class="text-xl font-semibold">Experience</h2>
+
+	<button
+		onclick={addExperince}
+		class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
+	>
+		+ Add Experince
+	</button>
+</div>
+{#each portfolio.experience as experience, index(experience.id)}
+<ExperienceCard {experience} {index} onDelete={()=>deleteExperince(experience.id)}/>
+{/each}
 </div>
 
 
