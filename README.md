@@ -58,7 +58,7 @@ This project is being built incrementally while learning Svelte 5.
 - [x] Experience section
       
   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2e15caa9-df7c-4bc5-93ed-5180b4df29d8" />
-- [ ] Education section
+- [x] Education section
 - [ ] Contact section
 - [ ] Theme customization
 - [ ] Export portfolio
