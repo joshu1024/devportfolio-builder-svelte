@@ -4,6 +4,8 @@
 	import PreviewPanel from "./PreviewPanel.svelte";
     import Sidebar from "./Sidebar.svelte";
     import type { Portfolio } from "$lib/types/portfolio";
+    import {setPortfolioContext} from "../../../lib/context/portfolio.ts"
+
      let portfolio = $state<Portfolio>({
         hero:{
             name:"Joshua Kipamet",
@@ -48,9 +50,18 @@
                 duration: "2025 - Present",
                 description: "Building scalable AI applications."
             }
-         ]
-    })
-
+         ],
+        education: [
+         {
+            id: 1,
+            school: "JKUAT",
+            degree: "BSc Computer Science",
+            duration: "2022 - Present",
+            description: "Focused on software engineering and distributed systems."
+         }
+        ]
+     })
+    setPortfolioContext(portfolio);
 </script>
 <div class="flex h-screen flex-col bg-zinc-950 text-zinc-100">
     <Header/>
@@ -58,9 +69,9 @@
         <Sidebar/>
         <main class="grid flex-1 grid-cols-2 gap-6 overflow-auto p-6">
 
-       <div class="overflow-y-auto pr-2"> <EditorPanel {portfolio}/></div>
+       <div class="overflow-y-auto pr-2"> <EditorPanel/></div>
 
-        <div class="overflow-y-auto pr-2"><PreviewPanel {portfolio}/></div>
+        <div class="overflow-y-auto pr-2"><PreviewPanel/></div>
 
         </main>
     </div>

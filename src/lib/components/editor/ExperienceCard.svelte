@@ -1,22 +1,49 @@
 <script lang="ts">
 	import type { Experience } from "$lib/types/portfolio";
-	import Input from "../ui/Input.svelte";
-	import SectionCard from "../ui/SectionCard.svelte";
-	import Textarea from "../ui/Textarea.svelte";
+	import TextField from "../ui/TextField.svelte";
 
-    interface Props {
-        experience:Experience;
-        index:number;
-        onDelete:()=>void;
-    }
-    let {experience,index,onDelete}:Props = $props();
+	interface Props {
+		experience: Experience;
+		index: number;
+		onDelete: () => void;
+	}
+
+	let { experience, index, onDelete }: Props = $props();
 </script>
-<SectionCard title={`Experience ${index + 1}`}>
-<div class="space-y-4">
-<Input label="Company" bind:value={experience.company}/>
-<Input label="Role" bind:value={experience.role}/>
-<Input label="Duration" bind:value={experience.duration}/>
-<Textarea label="Description" bind:value={experience.description} placeholder="Tell me about your job experience"/>
+	
+<div class="space-y-4 rounded-xl border border-zinc-700 p-4">
+
+	<h3 class="font-semibold">
+		Experience {index + 1}
+	</h3>
+
+		<TextField
+		label="Company"
+		bind:value={experience.company}
+		/>
+
+		<TextField
+			label="Role"
+			bind:value={experience.role}
+		/>
+
+		<TextField
+			label="Duration"
+			bind:value={experience.duration}
+		/>
+
+		<textarea
+			bind:value={experience.description}
+			rows="3"
+			placeholder="Description"
+			class="w-full rounded-lg border border-zinc-700 bg-zinc-900 p-2"
+		/>
+
+		<button
+			onclick={onDelete}
+			class="rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+		>
+			Delete Experience
+		</button>
+
 </div>
-</SectionCard>
-<button onclick={onDelete} class="mt-4 bg-blue-600 hover:bg-blue-700 rounded-lg px-4 text-white py-2">Delete experience</button>

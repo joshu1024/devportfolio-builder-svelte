@@ -1,10 +1,7 @@
 <script lang="ts">
-	import type { Portfolio } from "$lib/types/portfolio";
-	import SectionCard from "../ui/SectionCard.svelte";
-    interface Props {
-        portfolio:Portfolio
-    }
-    let {portfolio}:Props = $props();
+    import SectionCard from "../ui/SectionCard.svelte";
+    import {getPortfolioContext} from "$lib/context/portfolio"
+    let portfolio = getPortfolioContext()
     let newSkill = $state("");
     let skillCount = $derived(portfolio.skills.length);
 

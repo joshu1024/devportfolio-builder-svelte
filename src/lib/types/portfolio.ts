@@ -22,10 +22,18 @@ export interface Experience {
 	duration: string;
 	description: string;
 }
+export interface Education {
+	id: number;
+	school: string;
+	degree: string;
+	duration: string;
+	description: string;
+}
 export interface Portfolio {
 	hero: Hero;
    about:About;
    projects:Project[];
    skills:string[];
-   experience:Experience[]
+   experience:Experience[];
+   education:Education[];
 }

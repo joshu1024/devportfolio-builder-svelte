@@ -1,9 +1,6 @@
 <script lang="ts">
-	import type { Portfolio } from "$lib/types/portfolio";
-	interface Props {
-		portfolio:Portfolio
-	}
-	let {portfolio}:Props = $props();
+	import {getPortfolioContext} from "$lib/context/portfolio"
+	let portfolio = getPortfolioContext()
 	const skillCount = $derived(portfolio.skills.length)
 </script>
 
@@ -58,13 +55,48 @@
 		</div>
 	</section>
 	<section class="mt-10">
-		<h3 class="text-2xl font-semibold">Experience</h3>
-		{#each portfolio.experience as experience (experience.id)}
-		{@const exp = experience}
-		<h3 class="text-xl font-semibold">{exp.company}</h3>
-		<p class="mt-2 text-zinc-400">{exp.role}</p>
-		<p class="mt-2 text-zinc-400">{exp.duration}</p>
-		<p class="mt-2 text-zinc-400">{exp.description}</p>
-		{/each}
-	</section>
+	<h2 class="mb-6 text-2xl font-bold">
+		Experience
+	</h2>
+
+	{#if portfolio.experience.length === 0}
+
+		<p class="text-zinc-500 italic">
+			No experience added yet.
+		</p>
+
+	{:else}
+
+		<div class="space-y-6">
+
+			{#each portfolio.experience as experience (experience.id)}
+
+				{@const exp = experience}
+
+				<div class="border-l-2 border-blue-500 pl-4">
+
+					<h3 class="text-lg font-semibold">
+						{exp.role}
+					</h3>
+
+					<p class="text-blue-400">
+						{exp.company}
+					</p>
+
+					<p class="text-sm text-zinc-500">
+						{exp.duration}
+					</p>
+
+					<p class="mt-2 text-zinc-300">
+						{exp.description}
+					</p>
+
+				</div>
+
+			{/each}
+
+		</div>
+
+	{/if}
+</section>
 </div>

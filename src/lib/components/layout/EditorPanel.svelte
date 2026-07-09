@@ -2,18 +2,14 @@
 	import SectionCard from "$lib/components/ui/SectionCard.svelte";
     import Input from "$lib/components/ui/Input.svelte";
     import Textarea from "../ui/Textarea.svelte";
-    import type{ Portfolio } from "$lib/types/portfolio";
     import Checkbox from "../ui/Checkbox.svelte";
 	import ProjectCard from "../editor/ProjectCard.svelte";
 	import SkillsEditor from "../editor/SkillsEditor.svelte";
 	import ExperienceCard from "../editor/ExperienceCard.svelte";
+	import EducationCard from "../editor/EducationCard.svelte";
+	import { getPortfolioContext } from "$lib/context/portfolio";
 
-
-   interface Props {
-    portfolio:Portfolio
-   }
-   let {portfolio}:Props = $props()
-   
+	const portfolio = getPortfolioContext()
    	function addProject(){
 		portfolio.projects.push({
 			id: Date.now(),
@@ -86,7 +82,7 @@
 {#each portfolio.projects as project, index(project.id)}
 	<ProjectCard {project} {index} onDelete={()=>deleteProject(project.id)}/>
 {/each}
-<SkillsEditor {portfolio}/>
+<SkillsEditor/>
 <div class="mb-4 flex justify-between items-center">
 	<h2 class="text-xl font-semibold">Experience</h2>
 
@@ -99,6 +95,9 @@
 </div>
 {#each portfolio.experience as experience, index(experience.id)}
 <ExperienceCard {experience} {index} onDelete={()=>deleteExperince(experience.id)}/>
+{/each}
+{#each portfolio.education as education, index(education.id)}
+<EducationCard {education} {index} onDelete={()=>deleteExperince(education.id)}/>
 {/each}
 </div>
 
