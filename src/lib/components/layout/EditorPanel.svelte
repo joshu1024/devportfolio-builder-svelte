@@ -7,7 +7,10 @@
 	import SkillsEditor from "../editor/SkillsEditor.svelte";
 	import ExperienceCard from "../editor/ExperienceCard.svelte";
 	import EducationCard from "../editor/EducationCard.svelte";
+	import ThemeEditor from "../editor/ThemeEditor.svelte";
 	import { getPortfolioContext } from "$lib/context/portfolio";
+	import {flip} from "svelte/animate"
+	import ContactEditor from "$lib/components/editor/ContactEditor.svelte"
 
 	const portfolio = getPortfolioContext()
    	function addProject(){
@@ -34,20 +37,43 @@
 	function deleteExperince(id:number){
 		portfolio.experience = portfolio.experience.filter((e)=>e.id !== id)
 	}
+	function moveProjectUp(index: number) {
+	if (index === 0) return;
+
+	[
+		portfolio.projects[index - 1],
+		portfolio.projects[index]
+	] = [
+		portfolio.projects[index],
+		portfolio.projects[index - 1]
+	];
+}
+
+	function moveProjectDown(index: number) {
+		if (index === portfolio.projects.length - 1) return;
+
+		[
+			portfolio.projects[index],
+			portfolio.projects[index + 1]
+		] = [
+			portfolio.projects[index + 1],
+			portfolio.projects[index]
+		];
+	}
 </script>
 
 <div class="space-y-6">
-<SectionCard title="Hero Section">
-	<div class="space-y-5">
+<section id="Hero"><SectionCard title="Hero Section">
+	<div  class="space-y-5">
         <Input label="Name" bind:value={portfolio.hero.name} placeholder="Your name"/>
         <Input label="Professional Title"
 			bind:value={portfolio.hero.title}
 			placeholder="Your title"/>
         <Textarea label="Bio" bind:value={portfolio.hero.bio} placeholder="Tell visitors about yourself"/>    
           </div>
-</SectionCard>
+</SectionCard></section>
 
-<SectionCard title="About Section">
+<section id="About"><SectionCard title="About Section">
 	<div class="space-y-5">
 		<Input
 			label="Location"
@@ -66,9 +92,10 @@
 			bind:checked={portfolio.about.available}
 		/>
 	</div>
-</SectionCard>
+</SectionCard></section>
 
-<div class="mb-4 flex justify-between items-center">
+<section id="Projects">
+	<div class="mb-4 flex justify-between items-center">
 	<h2 class="text-xl font-semibold">Projects</h2>
 
 	<button
@@ -77,12 +104,18 @@
 	>
 		+ Add Project
 	</button>
-</div>
+	</div>
 
-{#each portfolio.projects as project, index(project.id)}
-	<ProjectCard {project} {index} onDelete={()=>deleteProject(project.id)}/>
-{/each}
-<SkillsEditor/>
+	{#each portfolio.projects as project, index(project.id)}
+	<div animate:flip><ProjectCard {project} {index} onMoveUp={() => moveProjectUp(index)}
+		onMoveDown={() => moveProjectDown(index)} onDelete={()=>deleteProject(project.id)}/>
+	</div>	
+	{/each}
+</section>
+
+<section id="Skills"><SkillsEditor/></section>
+
+<section id="Experience">
 <div class="mb-4 flex justify-between items-center">
 	<h2 class="text-xl font-semibold">Experience</h2>
 
@@ -96,9 +129,15 @@
 {#each portfolio.experience as experience, index(experience.id)}
 <ExperienceCard {experience} {index} onDelete={()=>deleteExperince(experience.id)}/>
 {/each}
+</section>
+
+<section id="Education">
 {#each portfolio.education as education, index(education.id)}
 <EducationCard {education} {index} onDelete={()=>deleteExperince(education.id)}/>
 {/each}
+</section>
+<section id="Contact"><ContactEditor/></section>
+<section id="Theme"><ThemeEditor/></section>
 </div>
 
 

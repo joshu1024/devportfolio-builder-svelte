@@ -29,11 +29,27 @@ export interface Education {
 	duration: string;
 	description: string;
 }
+export interface Theme {
+	accent: string;
+	fontSize: number;
+	borderRadius: number;
+	darkMode: boolean;
+}
+export interface Contact {
+	email: string;
+	phone: string;
+	location: string;
+	github: string;
+	linkedin: string;
+	website: string;
+}
 export interface Portfolio {
-	hero: Hero;
+   hero: Hero;
    about:About;
    projects:Project[];
    skills:string[];
    experience:Experience[];
    education:Education[];
+   theme:Theme;
+   contact:Contact;
 }

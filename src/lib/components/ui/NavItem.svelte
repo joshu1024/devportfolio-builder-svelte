@@ -5,12 +5,14 @@
 		title: string;
 		icon: IconName;
 		active?: boolean;
+		onclick:()=>void
 	}
 
-	let { title, icon, active = false }: Props = $props();
+	let { title, icon, active = false,onclick }: Props = $props();
 </script>
 
 <button
+onclick={onclick}
 	class={`flex w-full items-center gap-3 rounded-lg px-3 py-2 transition-colors ${
 		active
 			? "bg-blue-600 text-white"

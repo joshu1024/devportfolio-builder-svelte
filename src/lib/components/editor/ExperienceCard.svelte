@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Experience } from "$lib/types/portfolio";
 	import TextField from "../ui/TextField.svelte";
+	import {fade} from "svelte/transition"
 
 	interface Props {
 		experience: Experience;
@@ -11,7 +12,8 @@
 	let { experience, index, onDelete }: Props = $props();
 </script>
 	
-<div class="space-y-4 rounded-xl border border-zinc-700 p-4">
+<div in:fade={{ duration: 200 }}
+	out:fade={{ duration: 150 }} class="space-y-4 rounded-xl border border-zinc-700 p-4">
 
 	<h3 class="font-semibold">
 		Experience {index + 1}

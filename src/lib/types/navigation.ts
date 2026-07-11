@@ -1,7 +1,6 @@
 import type { IconName } from '$lib/icons';
-
+import type {Section} from "$lib/context/ui"
 export interface NavigationItem {
-	title: string;
+	title: Section;
 	icon: IconName;
-	active?: boolean;
 }

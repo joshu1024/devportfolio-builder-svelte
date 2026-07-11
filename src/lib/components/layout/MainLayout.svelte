@@ -5,6 +5,7 @@
     import Sidebar from "./Sidebar.svelte";
     import type { Portfolio } from "$lib/types/portfolio";
     import {setPortfolioContext} from "../../../lib/context/portfolio.ts"
+	import { setUIContext,type UIState} from "$lib/context/ui";
 
      let portfolio = $state<Portfolio>({
         hero:{
@@ -59,9 +60,27 @@
             duration: "2022 - Present",
             description: "Focused on software engineering and distributed systems."
          }
-        ]
+        ],
+         theme: {
+            accent: "#2563eb",
+            fontSize: 16,
+            borderRadius: 12,
+            darkMode: true
+            },
+        contact: {
+        email: "joshuakipamet@gmail.com",
+        phone: "0713373043",
+        location: "Nairobi, Kenya",
+        github: "https://github.com/joshu1024",
+        linkedin: "https://linkedin.com/in/joshua-kipamet-148698140",
+        website: "https://portfolio-xxxx.vercel.app"
+         },
      })
     setPortfolioContext(portfolio);
+    let ui = $state<UIState>({
+        activeSection: "Hero"
+    })
+    setUIContext(ui);
 </script>
 <div class="flex h-screen flex-col bg-zinc-950 text-zinc-100">
     <Header/>
